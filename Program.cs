@@ -14,16 +14,14 @@ namespace CYOA {
 			player = new Player(adventure);
 
 			if (player.HasSave) {
-				if (AskYN("Do you want to load your save game? [Y/n]", true)) {
-
+				if (AskYN("Do you want to load your save game?", true)) {
+					player.LoadSave();
 				} else {
 					player.NewGame();
 				}
 			} else {
 				player.NewGame();
 			}
-
-			player.NewGame();
 
 			player.Save();
 
@@ -33,8 +31,11 @@ namespace CYOA {
 
 		private static bool AskYN(string q, bool def) {
 			int tries = 3;
+			string yn;
+			if (def) yn = "[Y/n]"; else yn = "[y/N]";
+
 		again:
-			Console.Write("{0} ", q);
+			Console.Write("{0} {1} ", q, yn);
 
 			var key = Console.ReadLine();
 
