@@ -8,6 +8,7 @@ namespace CYOA {
 	class Adventure {
 		public static readonly string NS = "http://mike-caron.com/cyoa";
 
+		public string Name { get; private set; }
 		public Dictionary<string, Page> Pages { get; private set; }
 
 		public Page Start { get; set; }
@@ -42,6 +43,8 @@ namespace CYOA {
 			}
 
 			Adventure ret = new Adventure();
+
+			ret.Name = System.IO.Path.GetFileNameWithoutExtension(file);
 
 			ret.Load(doc.Root);
 
