@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<cyoa xmlns="http://mike-caron.com/cyoa">
+	<start>intro</start>
+	<pages>
+		<page id="intro">
+			<body xmlns:h="http://mike-caron.com/cyoa/tml">
+				<h:p>Test page</h:p>
+			</body>
+		</page>
+	</pages>
+</cyoa>
