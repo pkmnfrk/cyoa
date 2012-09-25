@@ -25,8 +25,15 @@ namespace CYOA {
 
 			player.Save();
 
-			Console.WriteLine("Press any key to exit...");
-			Console.ReadKey(true);
+			while (true) {
+				Console.Clear();
+				Console.Write(player.Page.Body.RenderConsole(player));
+
+				Pause();
+			}
+
+
+			//Pause();
 		}
 
 		private static bool AskYN(string q, bool def) {
@@ -52,6 +59,13 @@ namespace CYOA {
 				return def;
 			}
 			goto again;
+		}
+
+		private static void Pause(string q = null) {
+			if (q == null) q = "Press any key to continue...";
+
+			Console.WriteLine(q);
+			Console.ReadKey(true);
 		}
 	}
 }

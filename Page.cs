@@ -19,7 +19,7 @@ namespace CYOA {
 			Page ret = new Page();
 
 			ret.ID = p.Attribute("id").Value;
-			ret.Body = new TMLDoc(p.Element(XName.Get("body", TMLDoc.NS)));
+			ret.Body = new TMLDoc(p.Element(XName.Get("body", Adventure.NS)));
 
 			return ret;
 		}

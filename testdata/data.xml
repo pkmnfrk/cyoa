@@ -6,6 +6,12 @@
 			<body xmlns:h="http://mike-caron.com/cyoa/tml">
 				<h:p>Test page</h:p>
 			</body>
+			<actions>
+				<action>
+					<text>Continue to page <dest/></text>
+					<goto>intro</goto>
+				</action>
+			</actions>
 		</page>
 	</pages>
 </cyoa>

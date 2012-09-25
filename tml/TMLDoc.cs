@@ -13,5 +13,13 @@ namespace CYOA {
 		public TMLDoc(XElement d) {
 			Doc = d;
 		}
+
+		public string RenderConsole(Player p) {
+			ITMLRenderer r = new TMLConsoleRenderer();
+
+			return r.Render(p, this);
+		}
+
+		
 	}
 }
